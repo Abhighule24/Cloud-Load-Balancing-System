@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CloudBalancingClient</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand" href="#">Cloud-Balancing Client</a><button data-toggle="collapse" class="navbar-toggle collapsed" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Server Search</a></li>
+                    <li class="disabled"><a href="#">Functions</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section></section>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="text-center card-title">Select Option</h4>
+                            <form>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><span>Select Agent :</span></div><select class="form-control input-sm btn-warning" id="agntSrv">
+                                        <option value="127.0.0.1" selected="">Local Host</option>
+                                        <option value="154.61.75.17">Agent on Cloud</option>
+                                    </select>
+                                </div>
+                                <div class="input-group" style="margin-bottom: 5px;">
+                                    <div class="input-group-addon"><span>Port :&nbsp;</span></div><input class="form-control input-sm btn-info" type="text" id="t1" placeholder="8080" required="true" inputmode="numeric">
+                                </div>
+                                <div class="form-group" id="fg1"><span class="label label-primary" style="font-size: 15px;">Select Function(s):</span>
+                                    <div class="checkbox"><label class="control-label"><input type="checkbox" class="funcs" value="&quot;SD&quot;">Standard Deviation</label></div>
+                                    <div class="checkbox"><label class="control-label"><input type="checkbox" class="funcs" value="&quot;ED&quot;">Euclidean Distance</label></div>
+                                    <div class="checkbox"><label class="control-label"><input type="checkbox" class="funcs" value="&quot;CF&quot;">Cumulative Frequency</label></div>
+                                    <div class="checkbox"><label class="control-label"><input type="checkbox" class="funcs" value="&quot;anova&quot;">Anova</label></div>
+                                    <div class="checkbox"><label class="control-label"><input type="checkbox" class="funcs" value="&quot;dataset&quot;">Dataset</label></div>
+                                </div><input class="form-control form-control" type="text" id="t2" name="params" required="" placeholder="example:  {values:[func1,func2]}" disabled=""><button class="btn btn-success btn-block" type="button" onclick="getScrCard()">Find Servers</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8" style="margin: 0px;">
+                    <div class="well" id="well1" style="background: rgb(149,145,137);"><span>Output Window</span></div>
+                </div>
+                <div class="col-md-12"></div>
+                <div class="col-md-12"></div>
+            </div>
+        </div>
+    </div>
+    <div id="popCont" class="errPop"></div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/alertHandler.js"></script>
+    <script src="assets/js/myfuncs.js"></script>
+</body>
+
+</html>

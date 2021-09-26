@@ -1,0 +1,16 @@
+.errPop {
+  position: fixed;
+  min-width: 20vw;
+  overflow-wrap: normal;
+  right: 10px;
+  top: 5vh;
+}
+
+td, th {
+  padding: 5px 15px !important;
+}
+
+table {
+  background-color: #b3b3b1bf !important;
+}
+

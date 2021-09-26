@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CloudBalancingClient</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand" href="#">Cloud-Balancing Client</a><button data-toggle="collapse" class="navbar-toggle collapsed" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Server Search</a></li>
+                    <li class="active"><a href="#">Functions</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section></section>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="well" style="background: rgb(238,190,190);"><span id="hpd1">Loading...</span></div><div>
+<script>
+
+	
+	
+</script>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active" role="presentation"><a href="#tab-1" role="tab" data-toggle="tab">Standard Deviation</a></li>
+                            <li role="presentation"><a href="#tab-2" role="tab" data-toggle="tab">Data Set</a></li>
+                            <li role="presentation"><a href="#tab-3" role="tab" data-toggle="tab">Euclidian Distance</a></li>
+                            <li role="presentation"><a href="#tab-4" role="tab" data-toggle="tab">Cumulative Frequency</a></li>
+                            <li role="presentation"><a href="#tab-5" role="tab" data-toggle="tab">Anova</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" role="tabpanel" id="tab-1">
+                                <div class="well" style="background: radial-gradient(#609191 0%, #26686d 100%), #007770;">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><span>Input values :&nbsp;</span></div><input class="form-control" type="text" id="sdi" placeholder="example: 1,2,3,4,5">
+                                    </div>
+                                    <hr style="filter: blur(0px);opacity: 0.32;box-shadow: inset 4px 4px 3px 3px;"><button class="btn btn-warning" type="button" style="border-top-left-radius: 14px;border-bottom-right-radius: 21px;color: rgb(0,0,0);" onclick="getServOutput(&quot;SD&quot;,ip,port,$(&quot;#sdi&quot;).val())">Execute</button>
+                                </div>
+                            </div>
+                            <div class="tab-pane" role="tabpanel" id="tab-2">
+                                <div class="well" style="background: radial-gradient(#609191 0%, #26686d 100%), #007770;">
+                                    <hr style="filter: blur(0px);opacity: 0.32;box-shadow: inset 4px 4px 3px 3px;"><button class="btn btn-warning" type="button" style="border-top-left-radius: 14px;border-bottom-right-radius: 21px;color: rgb(0,0,0);" onclick="getServOutput(&quot;dataset&quot;,ip,port,&quot;dataset&quot;)">Get DataSet</button>
+                                </div>
+                            </div>
+                            <div class="tab-pane" role="tabpanel" id="tab-3">
+                                <div class="well" style="background: radial-gradient(#609191 0%, #26686d 100%), #007770;">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><span>Input values A:&nbsp;</span></div><input class="form-control" type="text" id="sdi-3a" placeholder="example: 1,2,3,4,5">
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><span>Input values B:&nbsp;</span></div><input class="form-control" type="text" id="sdi-3b" placeholder="example: 1,2,3,4,5">
+                                    </div>
+                                    <hr style="filter: blur(0px);opacity: 0.32;box-shadow: inset 4px 4px 3px 3px;"><button class="btn btn-warning" type="button" style="border-top-left-radius: 14px;border-bottom-right-radius: 21px;color: rgb(0,0,0);" onclick="getServOutput(&quot;ED&quot;,ip,port,&quot;[&quot;+$(&quot;#sdi-3a&quot;).val()+&quot;],[&quot;+$(&quot;#sdi-3b&quot;).val()+&quot;]&quot;)">Execute</button>
+                                </div>
+                            </div>
+                            <div class="tab-pane" role="tabpanel" id="tab-4">
+                                <div class="well" style="background: radial-gradient(#609191 0%, #26686d 100%), #007770;">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><span>Input values :&nbsp;</span></div><input class="form-control" type="text" id="sdi-4" placeholder="example: 1,2,3,4,5">
+                                    </div>
+                                    <hr style="filter: blur(0px);opacity: 0.32;box-shadow: inset 4px 4px 3px 3px;"><button class="btn btn-warning" type="button" style="border-top-left-radius: 14px;border-bottom-right-radius: 21px;color: rgb(0,0,0);" onclick="getServOutput(&quot;CF&quot;,ip,port,$(&quot;#sdi-4&quot;).val())">Execute</button>
+                                </div>
+                            </div>
+                            <div class="tab-pane" role="tabpanel" id="tab-5">
+                                <div class="well" style="background: radial-gradient(#609191 0%, #26686d 100%), #007770;">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><span>Input values A:&nbsp;</span></div><input class="form-control" type="text" id="sdi-5a" placeholder="example: 1,2,3,4,5">
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><span>Input values B:&nbsp;</span></div><input class="form-control" type="text" id="sdi-5b" placeholder="example: 1,2,3,4,5">
+                                    </div>
+                                    <hr style="filter: blur(0px);opacity: 0.32;box-shadow: inset 4px 4px 3px 3px;"><button class="btn btn-warning" type="button" style="border-top-left-radius: 14px;border-bottom-right-radius: 21px;color: rgb(0,0,0);" onclick="getServOutput(&quot;anova&quot;,ip,port,&quot;[&quot;+$(&quot;#sdi-5a&quot;).val()+&quot;],[&quot;+$(&quot;#sdi-5b&quot;).val()+&quot;]&quot;)">Execute</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well"><span id="outdiv">Output Area</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="popCont" class="errPop"></div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/alertHandler.js"></script>
+    <script src="assets/js/functiononload.js"></script>
+    <script src="assets/js/myfuncs.js"></script>
+</body>
+
+</html>
